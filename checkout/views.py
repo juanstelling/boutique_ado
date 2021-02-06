@@ -11,8 +11,8 @@ import stripe
 
 
 def checkout(request):
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    stripe_public_key = 'pk_test_51IHPYVAdwIQEGoNWHBMBkjRV0ghrJ6gfIfguAJ0cdgZTJBBo1VHGHC430qiMP3Wadhcwje0Pk2Qoc4JV3XptqLi900jCY7tfas'
+    stripe_secret_key = 'sk_test_51IHPYVAdwIQEGoNWa6UHJn8On5aIBQnqjnZTD0tqFyfh6wBWE4OSY9Xc8GboQ2ZqYP9qewbDUnnq2kAvNB4rbAhp00Tdg80M7l'
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
@@ -113,3 +113,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+    
